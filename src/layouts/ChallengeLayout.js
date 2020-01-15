@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Paragraph } from 'grommet';
+import { Heading, Main, Paragraph } from 'grommet';
 
 import { Challenge } from '../components';
 import { AppLayout } from '../layouts';
@@ -7,7 +7,9 @@ import { AppLayout } from '../layouts';
 const ChallengeLayout = () => {
   return (
     <AppLayout>
-      <Challenge />
+      <Main background="background-back">
+        <Challenge />
+      </Main>
     </AppLayout>
   );
 };

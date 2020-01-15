@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Footer, Header, Main } from 'grommet';
+import { Box } from 'grommet';
+
+import { AppHeader } from '../components';
 
 const AppLayout = ({ children }) => {
   return (
-    <Box align="center">
-      <Header background="light-2" border>
-        Header
-      </Header>
-      <Main background="light-4" border>
-        {children}
-      </Main>
-      <Footer background="light-2" border>
-        Footer
-      </Footer>
+    <Box
+      align="center"
+      // height={{ min: '100vh' }}
+    >
+      <AppHeader />
+      {children}
     </Box>
   );
 };

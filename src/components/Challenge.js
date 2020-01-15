@@ -17,7 +17,7 @@ const Challenge = ({ challenge }) => {
         <>
           <Heading level={2}>Objectives</Heading>
           {objectives.map(objective => {
-            return <Objective key={objective.objective} />;
+            return <Objective key={objective.objective}>{objective}</Objective>;
           })}
         </>
       )}

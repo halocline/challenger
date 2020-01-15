@@ -1,8 +1,17 @@
 import React from 'react';
-import { Heading } from 'grommet';
+import { Text } from 'grommet';
 
-const Objective = () => {
-  return <Heading>Objective Name</Heading>;
+const Objective = ({ children }) => {
+  const { objective, criteria } = children;
+  return (
+    <>
+      <Text>{objective}</Text>
+      {criteria &&
+        criteria.map((criterion, index) => (
+          <Text key={index}>• {criterion.criterion}</Text>
+        ))}
+    </>
+  );
 };
 
 export { Objective };
