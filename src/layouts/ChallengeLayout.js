@@ -1,16 +1,29 @@
 import React from 'react';
-import { Heading, Main, Paragraph } from 'grommet';
+import { Box, Footer, Header, Main, Text } from 'grommet';
+import { Favorite, Share } from 'grommet-icons';
 
 import { Challenge } from '../components';
-import { AppLayout } from '../layouts';
+import { MaxWidth } from '.';
 
 const ChallengeLayout = () => {
   return (
-    <AppLayout>
-      <Main background="background-back">
+    <MaxWidth>
+      <Header background="background-contrast" pad={{ vertical: 'small' }} fill>
+        <Text>Actions like save and share</Text>
+        <Box direction="row" gap="large">
+          <Favorite />
+          <Share />
+        </Box>
+      </Header>
+      <Main
+        fill
+        background="background-back"
+        // background="blue"
+      >
         <Challenge />
       </Main>
-    </AppLayout>
+      <Footer>Actions</Footer>
+    </MaxWidth>
   );
 };
 

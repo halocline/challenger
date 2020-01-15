@@ -3,12 +3,15 @@ import { Grommet } from 'grommet';
 // import logo from './logo.svg';
 // import './App.css';
 
-import { ChallengeLayout } from './layouts';
+import { AppLayout, ChallengeLayout } from './layouts';
+import { challenger } from './themes';
 
 const App = () => {
   return (
-    <Grommet>
-      <ChallengeLayout />
+    <Grommet theme={challenger} themeMode="light">
+      <AppLayout>
+        <ChallengeLayout />
+      </AppLayout>
     </Grommet>
   );
 };
