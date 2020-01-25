@@ -4,15 +4,18 @@ import { Grommet } from 'grommet';
 // import './App.css';
 import './reset.css';
 
-import { Challenge } from './components';
+import { challenges } from './data';
+import { ChallengePage } from './pages';
 import { AppLayout } from './layouts';
 import { challenger } from './themes';
+
+const challenge = challenges[0];
 
 const App = () => {
   return (
     <Grommet theme={challenger} themeMode="light">
       <AppLayout>
-        <Challenge />
+        {challenge && <ChallengePage challenge={challenge} />}
       </AppLayout>
     </Grommet>
   );
