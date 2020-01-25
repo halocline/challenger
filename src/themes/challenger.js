@@ -8,6 +8,7 @@ export const challenger = deepMerge(base, {
       'background-back': { dark: '#0F0F0F', light: '#F0F0F0' },
       'background-front': { dark: '#1F1F1F', light: '#FFFFFF' },
       'background-contrast': { dark: '#FFFFFF18', light: '#00000018' },
+      'background-contrast-faint': { dark: '#FFFFFF04', light: '#00000004' },
     },
   },
 });

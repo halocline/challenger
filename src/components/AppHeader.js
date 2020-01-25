@@ -8,14 +8,13 @@ const AppHeader = () => {
   return (
     <Header
       background="brand"
-      pad={{ horizontal: 'xlarge', vertical: 'small' }}
+      pad={{ horizontal: 'large', vertical: 'small' }}
       justify="center"
       fill
     >
       <Box
         direction="row"
         align="center"
-        border
         fill
         justify="between"
         height={{ min: 'xxsmall' }}

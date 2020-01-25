@@ -2,15 +2,17 @@ import React from 'react';
 import { Grommet } from 'grommet';
 // import logo from './logo.svg';
 // import './App.css';
+import './reset.css';
 
-import { AppLayout, ChallengeLayout } from './layouts';
+import { Challenge } from './components';
+import { AppLayout } from './layouts';
 import { challenger } from './themes';
 
 const App = () => {
   return (
     <Grommet theme={challenger} themeMode="light">
       <AppLayout>
-        <ChallengeLayout />
+        <Challenge />
       </AppLayout>
     </Grommet>
   );
