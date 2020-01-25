@@ -15,7 +15,6 @@ const PageLayout = ({ children, main, footer, header }) => {
       </Header>
       <Main pad={{ horizontal: 'medium', vertical: 'medium' }} fill>
         {main}
-        {children}
       </Main>
       <Footer
         justify="center"

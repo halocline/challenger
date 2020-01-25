@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Heading, Paragraph, Anchor } from 'grommet';
 import { Camera, Favorite, Group, MapLocation, Share } from 'grommet-icons';
 
-import { Objective } from '../components';
+import { Objective } from '.';
 import { logEvent } from '../utils';
 
 const ChallengeTitle = ({ challenge }) => {

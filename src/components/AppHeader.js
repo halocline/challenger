@@ -26,7 +26,12 @@ const AppHeader = () => {
             <Text>Challenger</Text>
           </Box>
         </Button>
-        <Box>
+        <Box direction="row" gap="large">
+          <Button
+            label="Do something"
+            primary
+            onClick={event => logEvent(event)}
+          />
           <Button
             label="Do something"
             primary
