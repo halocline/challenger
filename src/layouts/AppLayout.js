@@ -6,10 +6,7 @@ import { AppHeader } from '../components';
 
 const AppLayout = ({ children }) => {
   return (
-    <Box
-      align="center"
-      // height={{ min: '100vh' }}
-    >
+    <Box align="center">
       <AppHeader />
       {children}
     </Box>
@@ -17,7 +14,7 @@ const AppLayout = ({ children }) => {
 };
 
 AppLayout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export { AppLayout };

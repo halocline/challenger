@@ -1,5 +1,39 @@
 export const challenges = [
   {
+    id: '2',
+    owner: 'gliss',
+    name: 'Ascend the Iron Throne',
+    location: {
+      name: 'Rye, CO',
+      map: `https://www.google.com/maps/place/Bishop+Castle/@38.0614198,-105.0944196,15z/data=!4m5!3m4!1s0x0:0xb4caa79dbbdf1913!8m2!3d38.0614198!4d-105.0944196`,
+    },
+    dates: undefined,
+    conceptDescription: 'Climb to the top of the iron bridge at Bishop Castle', // internally facing
+    promotion: {
+      photos: [],
+      description: `Bishop Castle is a massive structure of stone concrete and iron &mdash; handbuilt by a single man, Jim Bishop.`,
+      intro: `Stand atop the bridge at Bishop Castle. It's scary than you think.`,
+    },
+    objectives: [
+      {
+        objective: 'Stand atop the bridge at Bishop Castle',
+        criteria: [
+          {
+            criterion: 'Submit a photo of yourself on top of the arch bridge',
+            type: 'submit a photo',
+          },
+          {
+            criterion: 'Photo is taken at Bishop Castle',
+            type: 'verified geolocation',
+          },
+        ],
+        requirement: 'required',
+      },
+    ],
+    resources: [],
+  },
+  {
+    id: '1',
     owner: 'gliss',
     name: 'Pagosa Springs Plunge',
     location: {
@@ -65,6 +99,7 @@ export const challenges = [
     resources: [],
   },
   {
+    id: '0',
     owner: 'gliss',
     name: '',
     location: {

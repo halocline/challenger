@@ -10,7 +10,7 @@ import { challenger } from './themes';
 const challenge = challenges[0];
 
 const App = () => {
-  const [page, setPage] = useState('challenge');
+  const [page, setPage] = useState('challenges');
 
   return (
     <Grommet theme={challenger} themeMode="light">

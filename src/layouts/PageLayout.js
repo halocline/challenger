@@ -3,7 +3,7 @@ import { Footer, Header, Main } from 'grommet';
 
 import { MaxWidth } from '.';
 
-const PageLayout = ({ children, main, footer, header }) => {
+const PageLayout = ({ main, footer, header }) => {
   return (
     <MaxWidth>
       <Header
