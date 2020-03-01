@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Button, Header, Text } from 'grommet';
 import { Achievement } from 'grommet-icons';
 
@@ -20,23 +21,17 @@ const AppHeader = () => {
         height={{ min: 'xxsmall' }}
         width={{ max: 'xlarge' }}
       >
-        <Button onClick={event => logEvent(event)}>
+        {/* <Link to="/"> */}
+        <Button as={Link} to="/">
           <Box direction="row" gap="small">
             <Achievement />
             <Text>Challenger</Text>
           </Box>
         </Button>
+        {/* </Link> */}
         <Box direction="row" gap="large">
-          <Button
-            label="Do something"
-            primary
-            onClick={event => logEvent(event)}
-          />
-          <Button
-            label="Do something"
-            primary
-            onClick={event => logEvent(event)}
-          />
+          <Button as={Link} to="/challenges" label="All" primary />
+          <Button as={Link} to="/challenge" label="One" primary />
         </Box>
       </Box>
     </Header>

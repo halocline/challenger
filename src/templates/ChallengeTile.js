@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text } from 'grommet';
+import { Link } from 'react-router-dom';
+import { Button, Text } from 'grommet';
 
 import { Tile } from '../components';
 
@@ -19,12 +20,14 @@ export const ChallengeTile = ({ challenge }) => {
   const { promotion } = challenge;
 
   return (
-    <Tile
-      header={<TileHeading challenge={challenge} />}
-      footer={<TileFooter challenge={challenge} />}
-      height="small"
-    >
-      <Text>{promotion.intro}</Text>
-    </Tile>
+    <Button as={Link} to={`/challenge/${challenge.id}`}>
+      <Tile
+        header={<TileHeading challenge={challenge} />}
+        footer={<TileFooter challenge={challenge} />}
+        height="small"
+      >
+        <Text>{promotion.intro}</Text>
+      </Tile>
+    </Button>
   );
 };

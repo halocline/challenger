@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { challenges } from '../data';
 import { PageLayout } from '../layouts';
 import {
   ChallengeTitle,
@@ -7,12 +8,17 @@ import {
   ChallengeActions,
 } from '../templates';
 
-export const ChallengePage = ({ challenge }) => {
-  return (
+const getChallenge = id => challenges.find(challenge => challenge.id === id);
+
+export const ChallengePage = ({ match }) => {
+  const challenge = getChallenge(match.params.id);
+
+  return challenge ? (
     <PageLayout
       header={<ChallengeTitle challenge={challenge} />}
-      main={<ChallengeContent challenge={challenge} />}
       footer={<ChallengeActions />}
-    />
-  );
+    >
+      <ChallengeContent challenge={challenge} />
+    </PageLayout>
+  ) : null;
 };
