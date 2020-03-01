@@ -1,30 +1,25 @@
 import React from 'react';
 import { Footer, Header, Main } from 'grommet';
 
-import { MaxWidth } from '.';
-
-const PageLayout = ({ main, footer, header }) => {
+const PageLayout = ({ children, footer, header }) => {
   return (
-    <MaxWidth>
+    <>
       <Header
         background="background-contrast-faint"
-        pad={{ horizontal: 'medium', vertical: 'medium' }}
         fill
+        pad={{ horizontal: 'medium', vertical: 'medium' }}
       >
         {header}
       </Header>
-      <Main pad={{ horizontal: 'medium', vertical: 'medium' }} fill>
-        {main}
-      </Main>
+      <Main pad={{ horizontal: 'medium', vertical: 'medium' }}>{children}</Main>
       <Footer
-        justify="center"
         background="background-contrast-faint"
-        pad={{ horizontal: 'medium', vertical: 'medium' }}
         fill
+        pad={{ horizontal: 'medium', vertical: 'medium' }}
       >
         {footer}
       </Footer>
-    </MaxWidth>
+    </>
   );
 };
 

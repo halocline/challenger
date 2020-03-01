@@ -1,28 +1,38 @@
 import React from 'react';
 import { Box, Footer, Header, Main } from 'grommet';
 
-const cardCorners = {
-  top: { corner: 'top', size: 'xsmall' },
-  bottom: { corner: 'bottom', size: 'xsmall' },
-};
-
-export const Tile = ({ header, footer, main }) => {
+export const Tile = ({
+  background,
+  children,
+  header,
+  footer,
+  pad,
+  ...rest
+}) => {
   return (
-    <Box background="background-front" round={cardCorners.top}>
-      <Header
-        pad={{ horizontal: 'medium', vertical: 'small' }}
-        round={cardCorners.top}
-      >
-        {header}
-      </Header>
-      <Main pad={{ horizontal: 'medium', vertical: 'small' }}>{main}</Main>
-      <Footer
-        background="background-contrast"
-        pad={{ horizontal: 'medium', vertical: 'small' }}
-        round={cardCorners.bottom}
-      >
-        {footer}
-      </Footer>
+    <Box border background="background-front" overflow="hidden" {...rest}>
+      {header && (
+        <Header background={background.header} pad={pad.header}>
+          {header}
+        </Header>
+      )}
+      <Main flex pad={pad.main}>
+        {children}
+      </Main>
+      {footer && (
+        <Footer background={background.footer} pad={pad.footer}>
+          {footer}
+        </Footer>
+      )}
     </Box>
   );
+};
+
+Tile.defaultProps = {
+  background: { header: 'background-contrast', footer: 'background-contrast' },
+  pad: {
+    main: { vertical: 'medium', horizontal: 'small' },
+    header: 'small',
+    footer: 'small',
+  },
 };

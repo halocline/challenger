@@ -11,8 +11,8 @@ export const challenges = [
     conceptDescription: 'Climb to the top of the iron bridge at Bishop Castle', // internally facing
     promotion: {
       photos: [],
-      description: `Bishop Castle is a massive structure of stone concrete and iron &mdash; handbuilt by a single man, Jim Bishop.`,
-      intro: `Stand atop the bridge at Bishop Castle. It's scary than you think.`,
+      description: `Bishop Castle is a massive structure of stone, concrete, and iron &mdash; handbuilt by a single man, Jim Bishop.`,
+      intro: `Stand atop the bridge at Bishop Castle. It's scarier than you think.`,
     },
     objectives: [
       {

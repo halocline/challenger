@@ -1,44 +1,30 @@
 import React from 'react';
-import { Box, Text } from 'grommet';
+import { Text } from 'grommet';
 
 import { Tile } from '../components';
 
 const TileHeading = ({ challenge }) => {
   const { name } = challenge;
 
-  return (
-    <Box>
-      <Text>{name}</Text>
-    </Box>
-  );
-};
-
-const TileContent = ({ challenge }) => {
-  const { name } = challenge;
-
-  return (
-    <Box>
-      <Text>{name}</Text>
-    </Box>
-  );
+  return <Text>{name}</Text>;
 };
 
 const TileFooter = ({ challenge }) => {
   const { name } = challenge;
 
-  return (
-    <Box>
-      <Text>{name}</Text>
-    </Box>
-  );
+  return <Text>{name}</Text>;
 };
 
 export const ChallengeTile = ({ challenge }) => {
+  const { promotion } = challenge;
+
   return (
     <Tile
       header={<TileHeading challenge={challenge} />}
-      main={<TileContent challenge={challenge} />}
       footer={<TileFooter challenge={challenge} />}
-    />
+      height="small"
+    >
+      <Text>{promotion.intro}</Text>
+    </Tile>
   );
 };

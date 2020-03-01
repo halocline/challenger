@@ -8,25 +8,35 @@ import { AppLayout } from './layouts';
 import { challenger } from './themes';
 
 const challenge = challenges[0];
+const pages = [
+  { pageName: 'challenge', layout: <ChallengePage challenge={challenge} /> },
+  {
+    pageName: 'challenges',
+    layout: <ChallengesPage challenges={challenges} />,
+  },
+];
 
 const App = () => {
-  const [page, setPage] = useState('challenges');
+  const [page, setPage] = useState(
+    pages.find(page => page.pageName === 'challenges')
+  );
+
+  const handleClick = pageName => {
+    const page = pages.find(page => page.pageName === pageName);
+    setPage(page);
+  };
 
   return (
     <Grommet theme={challenger} themeMode="light">
+      <AppLayout>{page.layout}</AppLayout>
       <Button
         label="Show Challenge Detail"
-        onClick={() => setPage('challenge')}
+        onClick={() => handleClick('challenge')}
       />
-      <Button label="Show Challenges" onClick={() => setPage('challenges')} />
-      <AppLayout>
-        {challenge && page === 'challenge' && (
-          <ChallengePage challenge={challenge} />
-        )}
-        {challenges && page === 'challenges' && (
-          <ChallengesPage challenges={challenges} />
-        )}
-      </AppLayout>
+      <Button
+        label="Show Challenges"
+        onClick={() => handleClick('challenges')}
+      />
     </Grommet>
   );
 };

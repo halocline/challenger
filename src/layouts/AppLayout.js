@@ -6,7 +6,7 @@ import { AppHeader } from '../components';
 
 const AppLayout = ({ children }) => {
   return (
-    <Box align="center">
+    <Box height={{ min: '100vh' }} width={{ max: 'xxlarge' }}>
       <AppHeader />
       {children}
     </Box>
