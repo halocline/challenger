@@ -20,14 +20,19 @@ export const ChallengeTile = ({ challenge }) => {
   const { promotion } = challenge;
 
   return (
-    <Button as={Link} to={`/challenge/${challenge.id}`}>
-      <Tile
-        header={<TileHeading challenge={challenge} />}
-        footer={<TileFooter challenge={challenge} />}
-        height="small"
+    <Link to={`/challenge/${challenge.id}`}>
+      <Button
+      // as={Link}
+      // to={`/challenge/${challenge.id}`}
       >
-        <Text>{promotion.intro}</Text>
-      </Tile>
-    </Button>
+        <Tile
+          header={<TileHeading challenge={challenge} />}
+          footer={<TileFooter challenge={challenge} />}
+          height="small"
+        >
+          <Text>{promotion.intro}</Text>
+        </Tile>
+      </Button>
+    </Link>
   );
 };

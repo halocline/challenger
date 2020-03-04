@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Button, Heading, Paragraph, Anchor } from 'grommet';
-import { Camera, Favorite, Group, MapLocation, Share } from 'grommet-icons';
+import { Bookmark, Camera, Group, MapLocation, Share } from 'grommet-icons';
 
 import { Objective } from '.';
 import { logEvent } from '../utils';
 
 const ChallengeTitle = ({ challenge }) => {
   const { name, location } = challenge;
+  const [isFavorite, setIsFavorite] = React.useState(false);
 
   return (
     <>
@@ -17,8 +18,11 @@ const ChallengeTitle = ({ challenge }) => {
         </Box>
       </Box>
       <Box direction="row" gap="large">
-        <Favorite />
-        <Share />
+        <Button
+          icon={<Bookmark color={isFavorite ? 'red' : null} />}
+          onClick={() => setIsFavorite(!isFavorite)}
+        />
+        <Button icon={<Share />} onClick={() => alert('sharing!')} />
       </Box>
     </>
   );
@@ -32,7 +36,7 @@ const ChallengeContent = ({ challenge }) => {
       <Paragraph fill>{promotion.description}</Paragraph>
       {objectives && (
         <>
-          <Heading level={2}>Objectives</Heading>
+          <Heading level={2}>Whatcha gotta do</Heading>
           {objectives.map(objective => {
             return <Objective key={objective.objective}>{objective}</Objective>;
           })}

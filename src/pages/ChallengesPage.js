@@ -24,10 +24,10 @@ export const ChallengesPage = () => {
   return (
     <PageLayout header={<Heading>Challenges</Heading>} footer="dfsafsaf faf">
       <ChallengeGrid>
-        <ChallengeTile key={challenges[1].id} challenge={challenges[1]} />
-        <ChallengeTile key={challenges[1].id} challenge={challenges[1]} />
-        <ChallengeTile key={challenges[1].id} challenge={challenges[1]} />
-        <ChallengeTile key={challenges[0].id} challenge={challenges[0]} />
+        {challenges &&
+          challenges.map(challenge => (
+            <ChallengeTile key={challenge.id} challenge={challenge} />
+          ))}
       </ChallengeGrid>
     </PageLayout>
   );
